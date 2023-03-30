@@ -10,7 +10,7 @@ public class ElevatorToFloor2 : MonoBehaviour
 
     private void Start()
     {
-        moving = GetComponent<ElevatorMovement>();
+        moving = FindObjectOfType<ElevatorMovement>();
     }
 
     private void OnTriggerStay(Collider other)
