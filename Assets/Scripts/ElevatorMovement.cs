@@ -23,31 +23,31 @@ public class ElevatorMovement : MonoBehaviour
         if (Floor1)
         {
             transform.position = Vector3.MoveTowards(transform.position, points[1].position, speed * Time.deltaTime);
-        }
 
-        if (transform.position == points[1].position)
-        {
-            Floor1 = false;
+            if (transform.position == points[1].position)
+            {
+                Floor1 = false;
+            }
         }
 
         if (Floor2)
         {
             transform.position = Vector3.MoveTowards(transform.position, points[2].position, speed * Time.deltaTime);
-        }
 
-        if (transform.position == points[2].position)
-        {
-            Floor2 = false;
+            if (transform.position == points[2].position)
+            {
+                Floor2 = false;
+            }
         }
 
         if (Floor3)
         {
             transform.position = Vector3.MoveTowards(transform.position, points[3].position, speed * Time.deltaTime);
-        }
 
-        if (transform.position == points[3].position)
-        {
-            Floor3 = false;
+            if (transform.position == points[3].position)
+            {
+                Floor3 = false;
+            }
         }
     }
 }

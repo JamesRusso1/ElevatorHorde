@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RagdollSwitch : MonoBehaviour
 {
+    //This coding was provided by John Blanch
     public BoxCollider mainCollider;
     public GameObject mainPlayer;
     public Animator mainPlayerAnimator;
