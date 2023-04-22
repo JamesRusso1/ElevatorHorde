@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
 
     public bool CanMove;
 
+    public Animator ani;
+
     //jump
     public float VerticalSpeed;
     public float JumpSpeed;
@@ -64,6 +66,17 @@ public class PlayerScript : MonoBehaviour
 
             float mouseX = Input.GetAxis("Mouse X") * Sensitivity;
             transform.rotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0f, mouseX, 0f));
+        }
+
+        //animation
+        if (Input.GetMouseButtonDown(0))
+        {
+            ani.SetBool("Swinging", true);
+        }
+            
+        else
+        {
+            ani.SetBool("Swinging", false);
         }
 
     }
