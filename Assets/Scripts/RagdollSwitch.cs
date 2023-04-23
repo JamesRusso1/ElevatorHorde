@@ -5,16 +5,19 @@ using UnityEngine.AI;
 
 public class RagdollSwitch : MonoBehaviour
 {
-    //This coding was provided by John Blanch
+    //This coding was provided by John Blanch and Zach has edited it 
     public BoxCollider mainCollider;
     public GameObject mainPlayer;
     public Animator mainPlayerAnimator;
     public NavMeshAgent AI;
+    public Rigidbody[] bones;
+    public int RagdollForce;
 
     void Start()
     {
         GetRagdollBits();
         ragDollOff();
+        bones = GetComponentsInChildren<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision Collision)
@@ -23,6 +26,11 @@ public class RagdollSwitch : MonoBehaviour
         {
             ragDollOn();
             AI.enabled = false;
+
+            foreach (Rigidbody bone in bones)
+            {
+                bone.AddForce(transform.forward * RagdollForce);
+            }
         }
     }
 
