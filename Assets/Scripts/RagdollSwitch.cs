@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RagdollSwitch : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class RagdollSwitch : MonoBehaviour
     public BoxCollider mainCollider;
     public GameObject mainPlayer;
     public Animator mainPlayerAnimator;
+    public NavMeshAgent AI;
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class RagdollSwitch : MonoBehaviour
         if (Collision.gameObject.tag == "Player")
         {
             ragDollOn();
+            AI.enabled = false;
         }
     }
 
