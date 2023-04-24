@@ -22,7 +22,7 @@ public class RagdollSwitch : MonoBehaviour
 
     private void OnCollisionEnter(Collision Collision)
     {
-        if (Collision.gameObject.tag == "Player")
+        if (Collision.gameObject.tag == "Sword")
         {
             ragDollOn();
             AI.enabled = false;
