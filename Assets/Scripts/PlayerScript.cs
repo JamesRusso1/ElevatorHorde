@@ -12,6 +12,12 @@ public class PlayerScript : MonoBehaviour
 
     public Animator ani;
 
+    //attack
+    public Collider SwordCollider;
+    private bool IsSwinging;
+    private float AttackDuration = 0.5f;
+    private float TimetoEnd;
+
     //jump
     public float VerticalSpeed;
     public float JumpSpeed;
@@ -69,15 +75,33 @@ public class PlayerScript : MonoBehaviour
         }
 
         //animation
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && IsSwinging == false)
         {
             ani.SetBool("Swinging", true);
+
+            //begin counting
+            TimetoEnd = Time.time + AttackDuration;
+
+            IsSwinging = true;
+          
         }
-            
-        else
+
+        if (IsSwinging == true)
         {
-            ani.SetBool("Swinging", false);
+            if(Time.time > TimetoEnd)
+            {
+                ani.SetBool("Swinging", false);
+                SwordCollider.enabled = false;
+
+                IsSwinging = false;
+            }
+
+            else
+            {
+                SwordCollider.enabled = true;
+            }
         }
+
 
     }
 }
