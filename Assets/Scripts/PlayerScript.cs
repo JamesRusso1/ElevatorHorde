@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour
     //attack
     public Collider SwordCollider;
     private bool IsSwinging;
-    private float AttackDuration = 0.5f;
+    private float AttackDuration = 0.3f;
     private float TimetoEnd;
 
     //jump
