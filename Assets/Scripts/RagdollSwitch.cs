@@ -25,7 +25,7 @@ public class RagdollSwitch : MonoBehaviour
         if (Collision.gameObject.tag == "Sword")
         {
             ragDollOn();
-            AI.enabled = false;
+            //AI.enabled = false;
 
             foreach (Rigidbody bone in bones)
             {
@@ -55,7 +55,7 @@ public class RagdollSwitch : MonoBehaviour
         {
             rigid.isKinematic = false;
         }
-
+        GetComponent<Enemy>().enabled = false;
 
         mainCollider.enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
