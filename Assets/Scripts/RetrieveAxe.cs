@@ -36,7 +36,7 @@ public class RetrieveAxe : MonoBehaviour
             RetrieveAxeCanvas.SetActive(true);
         }
 
-        if (RS1.Entered == true && RS2.Entered == true && RS3.Entered == true && RS4.Entered == true && RS5.Entered == true)
+        if (RS1.Entered == true || RS2.Entered == true || RS3.Entered == true || RS4.Entered == true || RS5.Entered == true)
         {
             Ding.Play();
             if (Input.GetKey(KeyCode.F))
